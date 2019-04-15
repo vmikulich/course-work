@@ -1,4 +1,5 @@
 const Position = require('../models/Position');
+const Category = require('../models/Category');
 const errorHandler = require('../utils/errorHandler');
 
 module.exports.getByCategoryId = async function(req, res) {
@@ -19,7 +20,9 @@ module.exports.create = async function(req, res) {
             name: req.body.name,
             company: req.body.company,
             description: req.body.description,
-            category: req.body.category,
+            category: (await Category.find({
+                name: req.body.category
+            })._id)
         }).save();
         res.status(201).json(position);
     }
