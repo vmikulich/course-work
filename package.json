@@ -7,8 +7,11 @@
     "start": "node index",
     "server": "nodemon index",
     "client-install": "npm install --prefix client",
+    "administrator-install": "npm install --prefix administrator",
     "client": "npm run serve --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "administrator": "npm run serve --prefix administrator",
+    "dev-client": "concurrently \"npm run server\" \"npm run client\"",
+    "dev-administrator": "concurrently \"npm run server\" \"npm run administrator\""
   },
   "keywords": [
     "express",

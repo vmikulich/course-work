@@ -10,9 +10,8 @@ export default new VueRouter({
     { 
       path: '/categories',
       name: 'Category',
-      component: Category,
+      component: Category 
     },
-    
   ]
 })
 
