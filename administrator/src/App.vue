@@ -48,4 +48,7 @@ export default {
 }
 </script>
 
+<style src="materialize-css/dist/css/materialize.min.css">
+
+</style>
 
