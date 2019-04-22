@@ -60,7 +60,12 @@ export default {
 </script>
 
 <style src="materialize-css/dist/css/materialize.min.css">
+<<<<<<< HEAD
   
 </style>
 
+=======
+
+</style>
+>>>>>>> 8031ecfcbd09591c5fe40bd55db4d843597a428e
 
