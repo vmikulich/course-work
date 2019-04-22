@@ -2,22 +2,19 @@
     <div class="categories">
         <div class="page-title">
         <h4>Категории</h4>
-            <button class="waves-effect waves-light btn grey darken-1">Добавить категорию</button>
+            <router-link to="/categories/new">
+                <button class="waves-effect waves-light btn grey darken-1">Добавить категорию</button>
+            </router-link>
         </div>
-        <div class="row">
+        <div class="row" v-if="!loading">
             <div class="col s12">
-                <div class="collection">
-                    <a href="#!" class="collection-item">Категория 1</a>
-                    <a href="#!" class="collection-item">Категория 1</a>
-                    <a href="#!" class="collection-item">Категория 1</a>
-                    <a href="#!" class="collection-item">Категория 1</a>
-                    <a href="#!" class="collection-item">Категория 1</a>
-                    <a href="#!" class="collection-item active">Категория 2</a>
-                    <a href="#!" class="collection-item">Категория 1</a>
-                    <a href="#!" class="collection-item">Категория 1</a>
+                <div class="collection" v-if="categories.length !== 0">
+                    <router-link :to="'/category/' + category._id" v-for="category in categories" class="collection-item">{{category.name}}</router-link >
                 </div>
+                <div v-else class="center">У вас нет категорий.</div>
             </div>
         </div>
+        <Loader v-if="loading"/>
     </div>
 </template>
 
@@ -26,18 +23,25 @@
 
 <script>
 import axios from 'axios'
+import Loader from './Loader'
 
 
 export default {
     name: 'Category',
     data() {
         return {
-            categories: []
+            categories: [],
+            loading: false
         }
     },
-//     async mounted() {
-//         this.categories = await axios.get(`localhost:5000/api/client/clientCategory`);
-//     }
+    components: {Loader},
+    mounted() {
+        this.loading = true;
+        axios.get(`http://localhost:5000/api/administrator/category`).then(res => {
+            this.categories = res.data;
+            this.loading = false;
+        });
+    }
 }
 </script>
 

@@ -14,15 +14,15 @@
 </template>
 
 <script>
-import Category from './components/Category.vue'
+
 
 export default {
   name: 'app',
 }
 </script>
 
-<style>
-@import "~materialize-css/dist/css/materialize.min.css";
-@import "theme/styles.min.css";
+<style src="materialize-css/dist/css/materialize.min.css">
+/* @import "~materialize-css/dist/css/materialize.min.css";
+@import "theme/styles.min.css"; */
 
 </style>
