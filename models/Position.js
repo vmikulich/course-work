@@ -15,7 +15,7 @@ const positionShema = new Shema({
         required: true
     },
     category: {
-        ref: 'categorises',
+        ref: 'categories',
         type: Shema.Types.ObjectId
     },
 });

@@ -20,9 +20,7 @@ module.exports.create = async function(req, res) {
             name: req.body.name,
             company: req.body.company,
             description: req.body.description,
-            category: (await Category.find({
-                name: req.body.category
-            })._id)
+            category: req.body.category
         }).save();
         res.status(201).json(position);
     }

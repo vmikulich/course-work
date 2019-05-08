@@ -9,7 +9,14 @@
         <div class="row" v-if="!loading">
             <div class="col s12">
                 <div class="collection" v-if="categories.length !== 0">
-                    <router-link :to="'/category/' + category._id" v-for="category in categories" class="collection-item">{{category.name}}</router-link >
+                    <router-link 
+                        :to="{name: 'CategoryForm', params: {id: category._id}}" 
+                        v-for="category in categories" 
+                        :key="category.id"
+                        class="collection-item"
+                        >
+                        {{category.name}}
+                    </router-link >
                 </div>
                 <div v-else class="center">У вас нет категорий.</div>
             </div>
@@ -30,18 +37,25 @@ export default {
     name: 'Category',
     data() {
         return {
-            categories: [],
+            // categories: [],
             loading: false
         }
     },
     components: {Loader},
     mounted() {
-        this.loading = true;
-        axios.get(`http://localhost:5000/api/administrator/category`).then(res => {
-            this.categories = res.data;
-            this.loading = false;
-        });
-    }
+        // this.loading = true;
+        // axios.get(`http://localhost:5000/api/administrator/category`).then(res => {
+        //     this.categories = res.data;
+        //     this.loading = false;
+        // });
+        this.$store.dispatch("getCategories", {loading: true});
+        // this.loading = false;
+    },
+    computed: {
+        categories() {
+            return this.$store.getters.categories || [];
+        },
+    },
 }
 </script>
 
