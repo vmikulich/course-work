@@ -16,12 +16,13 @@ export default new VueRouter({
     { 
       path: '/categories/new',
       name: 'NewCategoryForm',
-      component: CategoryForm 
+      component: CategoryForm
     },
     { 
       path: '/categories/:id',
       name: 'CategoryForm',
-      component: CategoryForm 
+      component: CategoryForm,
+      props: true
     },
   ],
   mode: 'history'

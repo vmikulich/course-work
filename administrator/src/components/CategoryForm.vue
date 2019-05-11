@@ -76,6 +76,7 @@
 import Position from './Position'
 import axios from 'axios'
 import { required } from 'vuelidate/lib/validators'
+import material from '../Materialize/material.js'
 
 export default {
     name:'CategoryForm',
@@ -105,13 +106,16 @@ export default {
     },
     mounted() {
         if (this.$route.params.id) {
-            M.updateTextFields();
+            setTimeout(() => {
+                material.updateTextFields();
+            }, 200)
+            
             axios.get(`http://localhost:5000/api/administrator/category/${this.id}`)
                  .then(res => {
-                     console.log(res.data);
+                    //  console.log(res.data);
                     this.currName = res.data.name;
                     this.imagePreview = res.data.imageSrc;
-                    console.log(this.imagePreview);
+                    // console.log(this.imagePreview);
                  });
             // this.$store.dispatch("getCategoryById", this.id);
         }
@@ -135,12 +139,15 @@ export default {
                 id: this.id
             }
             if (this.isNew) {
-                console.log(category);
+                // console.log(category);
                 this.$store.dispatch('createCategory', category)
-                           .then(() => this.$router.push('/categories'));
+                           .then(() => {
+                                    this.$router.push('/categories');
+                                    material.toast('Категория создана');
+                               });
             } else {
-                this.$store.dispatch('updateCategory', category);
-                        //    .then(() => this.$router.push('/categories'));
+                this.$store.dispatch('updateCategory', category)
+                           .then(() => material.toast('Изменения сохранены'));
             }
             
         },
