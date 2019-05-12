@@ -38,7 +38,6 @@
                         type="button"
                         class="waves-effect waves-light btn orange lighten-2 mb2"
                         @click="triggerClick()"
-                        :disabled="$v.$invalid"
                     >
                         <i class="material-icons left">backup</i>
                         Загрузить изображение

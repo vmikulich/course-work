@@ -121,9 +121,6 @@ export default {
         this.modal.destroy();
         this.$store.commit('setCategoryPositions', [])
     },
-    // updated() {
-    //     material.updateTextFields();
-    // },
     validations: {
         name: {
             required
@@ -145,7 +142,6 @@ export default {
             return M.Modal.init(this.$refs.modal);
         },
         onSelectPosition(position) {
-            console.log('update')
             setTimeout(() => {
                 material.updateTextFields();
             }, 200)
@@ -156,8 +152,6 @@ export default {
             this.modal.open();
         },
         onAddPosition() {
-            console.log('neww')
-            // material.updateTextFields();
             this.positionId = null;
             this.name = '';
             this.company = '';
