@@ -84,29 +84,32 @@
                         <label for="textarea1">Описание</label>
                     </div>
                 </div>
-                <div>
-                    <input 
-                        type="file"
-                        class="dn"
-                        ref="input"
-                        @change="onFileUpload($event)"
-                    >
-                    <button 
-                        type="button"
-                        class="waves-effect waves-light btn orange lighten-2 mb2"
-                        @click="triggerClick()"
-                    >
-                        <i class="material-icons left">backup</i>
-                        Загрузить изображение
-                    </button>
+                <div class="flex">
+                    <div>
+                        <input 
+                            type="file"
+                            class="dn"
+                            ref="input"
+                            @change="onFileUpload($event)"
+                        >
+                        <button 
+                            type="button"
+                            class="waves-effect waves-light btn orange lighten-2 mb2"
+                            @click="triggerClick()"
+                        >
+                            <i class="material-icons left">backup</i>
+                            Загрузить изображение
+                        </button>
+                    </div>
+                    <div class="col s12 l4 ">
+                        <img 
+                            class="responsive-img h200" 
+                            :src="imageSrc"
+                            v-if="imageSrc"
+                        >
+                    </div>
                 </div>
-                <div class="col s12 l4 center">
-                    <img 
-                        class="responsive-img h200" 
-                        :src="imageSrc"
-                        v-if="imageSrc"
-                    >
-                </div>
+                
                 <div class="modal-footer">
                     <button 
                         type="button"
@@ -129,9 +132,12 @@
 
 <script>
 import axios from 'axios'
+import osmosis from 'osmosis'
 import { required } from 'vuelidate/lib/validators'
 import material from '../Materialize/material.js'
 import Loader from './Loader'
+import firstParser from '../firstParser'
+import secondParser from '../secondParser'
 
 
 export default {
@@ -151,6 +157,7 @@ export default {
     },
     components: {Loader},
     mounted() {
+        // console.log(secondParser);
         this.modal = this.initModal();
         this.$store.dispatch('getPositions', this.categoryId);
     },
@@ -266,6 +273,7 @@ export default {
             }
             reader.readAsDataURL(file);
         },
+    
     }
 }
 </script>
@@ -274,5 +282,10 @@ export default {
 <style>
     .textarea {
         width: 500px;
+    }
+    .flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
 </style>

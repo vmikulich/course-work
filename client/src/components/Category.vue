@@ -1,11 +1,11 @@
 <template>
-    <div class="mw80">
+    <div class="container">
         <div class="row" v-if="!loading">
-            <div class="col s6" v-for="category in categories" :key="category.id">
+            <div class="col s6 m6" v-for="category in categories" :key="category.id">
                 <div class="card">
                     <router-link class="card-image" :to="{name: 'CategoryForm', params: {id: category._id}}" >
                         <img src="../../../uploads/10052019-190325_885-basketball.jpg">
-                        <span class="card-title">{{category.name}}</span>
+                        <span class="card-title bold">{{category.name}}</span>
                     </router-link>
                 </div>
             </div>

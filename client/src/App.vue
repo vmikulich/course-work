@@ -1,10 +1,10 @@
 <template>
   <div>
     <nav>
-    <div class="nav-wrapper grey darken-1">
-        <router-link to="/categories" class="brand-logo">Newborn</router-link>
-    </div>
-</nav>
+      <div class="nav-wrapper grey darken-1">
+          <router-link to="/categories" class="brand-logo">Newborn</router-link>
+      </div>
+  </nav>
     <router-view/>
   </div>
 </template>

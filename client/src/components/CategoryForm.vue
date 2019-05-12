@@ -2,11 +2,17 @@
     <div class="mw80">
         <div class="page-title">
             <h4>
-                <router-link to="/categories">{{currName}}</router-link>
+                <router-link class="grey-text text-darken-2" to="/categories">{{currName}}</router-link>
+                <button 
+                    class="btn btn-small open" 
+                    :data-tooltip="!isFilterActive ? 'Открыть фильтр' : 'Закрыть фильтр'"
+                    @click="isFilterActive = !isFilterActive"
+                >
+                    <i class="material-icons">filter_list</i>
+                </button>
             </h4>
         </div>
-        
-        <Position :categoryId="id"/>
+        <Position :categoryId="id" :isFilterActive="isFilterActive"/>
     </div>
 </template>
 
@@ -25,6 +31,7 @@ export default {
             image: null,
             imagePreview: '',
             currName: '',
+            isFilterActive: false
         }
     },
     components: {Position},
@@ -74,8 +81,13 @@ export default {
 
 
 <style>
-    .fr {
-        float: right;
+    h4 {
+        width: 100%;
+        position: relative;
+    }
+    .open {
+        position: absolute;
+        right: 0;
     }
     .h200 {
         height: 200px;

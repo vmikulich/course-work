@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="filter js-filter-block">
+        <div v-if="isFilterActive" class="page-title">
             <div class="fr">
                 <div class="col order">
                     <div class="input-field inline order-position-input">
@@ -34,7 +34,7 @@ import Loader from './Loader'
 
 export default {
     name: 'Position',
-    props: ['categoryId'],
+    props: ['categoryId','isFilterActive'],
     data() {
         return {
             name: '',
