@@ -14,6 +14,14 @@ const positionShema = new Shema({
         type: String,
         required: true
     },
+    link: {
+        type: String,
+        required: true
+    },
+    imageSrc: {
+        type: String,
+        default: ''
+    },
     category: {
         ref: 'categories',
         type: Shema.Types.ObjectId

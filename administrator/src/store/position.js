@@ -14,8 +14,21 @@ export default {
                 })
         },
         createPosition(context, payload) {
-            axios.post(`http://localhost:5000/api/administrator/position`, payload)
-                 .then((res) => context.commit('addPosition', res.data));
+            context.commit('setLoading', true);
+            const fd = new FormData();
+            if (payload.imageSrc) {
+                fd.append('image', payload.imageSrc, payload.imageSrc.name)
+            }
+            fd.append('name', payload.name)
+            fd.append('company', payload.company)
+            fd.append('description', payload.description)
+            fd.append('link', payload.link)
+            fd.append('categoryId', payload.category)
+            axios.post(`http://localhost:5000/api/administrator/position`, fd)
+                 .then((res) => {
+                    context.commit("addPosition", res.data);
+                    context.commit('setLoading', false);
+                })
         },
         updatePosition(context, payload) {
             return axios.patch(`http://localhost:5000/api/administrator/position/${payload._id}`, payload)

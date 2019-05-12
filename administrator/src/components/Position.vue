@@ -63,6 +63,16 @@
                         <label for="pos-cost">Компания</label>
                     </div>
                     <div class="input-field">
+                        <input 
+                            id="pos-cost" 
+                            type="text" 
+                            v-model="link" 
+                            @blur="$v.link.$touch()"
+                            required
+                        >
+                        <label for="pos-cost">ССылка</label>
+                    </div>
+                    <div class="input-field">
                         <textarea 
                             id="textarea1" 
                             class="materialize-textarea" 
@@ -72,9 +82,30 @@
                         >
                         </textarea>
                         <label for="textarea1">Описание</label>
-                        <!-- <input id="pos-cost" type="text" v-model="description" required>
-                        <label for="pos-cost">Описание</label> -->
                     </div>
+                </div>
+                <div>
+                    <input 
+                        type="file"
+                        class="dn"
+                        ref="input"
+                        @change="onFileUpload($event)"
+                    >
+                    <button 
+                        type="button"
+                        class="waves-effect waves-light btn orange lighten-2 mb2"
+                        @click="triggerClick()"
+                    >
+                        <i class="material-icons left">backup</i>
+                        Загрузить изображение
+                    </button>
+                </div>
+                <div class="col s12 l4 center">
+                    <img 
+                        class="responsive-img h200" 
+                        :src="imageSrc"
+                        v-if="imageSrc"
+                    >
                 </div>
                 <div class="modal-footer">
                     <button 
@@ -112,7 +143,10 @@ export default {
             name: '',
             company: '',
             description: '',
-            positionId: null
+            link: '',
+            positionId: null,
+            imageSrc: '',
+            image: ''
         }
     },
     components: {Loader},
@@ -132,6 +166,9 @@ export default {
             required
         },
         description: {
+            required
+        },
+        link: {
             required
         },
     },
@@ -155,6 +192,8 @@ export default {
             this.name = position.name;
             this.company = position.company;
             this.description = position.description;
+            this.link = position.link;
+            this.imageSrc = position.imageSrc;
             this.modal.open();
         },
         onAddPosition() {
@@ -162,6 +201,8 @@ export default {
             this.name = '';
             this.company = '';
             this.description = '';
+            this.link = '';
+            this.imageSrc = '';
             this.modal.open();
         },
         onCancel() {
@@ -172,6 +213,8 @@ export default {
                 name: this.name,
                 company: this.company,
                 description: this.description,
+                link: this.link,
+                imageSrc: this.image,
                 category: this.categoryId
             }
             if (this.positionId) {
@@ -187,7 +230,6 @@ export default {
                     })
                 this.$store.dispatch('getPositions', this.categoryId);
             } else {
-                
                 this.$store.dispatch('createPosition', position)
                     .then(() => {
                         material.toast('Позиция создана');
@@ -208,7 +250,22 @@ export default {
             this.name = '';
             this.company = '';
             this.description = '';
-        }
+            this.link = '';
+        },
+        triggerClick() {
+            this.$refs.input.click();
+        },
+        onFileUpload(event) {
+            const file = event.target.files[0];
+            this.image = file;
+            console.log(this.image);
+
+            const reader = new FileReader();
+            reader.onload = () => {
+                this.imageSrc = reader.result;
+            }
+            reader.readAsDataURL(file);
+        },
     }
 }
 </script>

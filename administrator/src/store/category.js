@@ -6,7 +6,7 @@ export default {
         categoryById: null,
     },
     actions: {
-        getCategories(context, payload) {
+        getCategories(context) {
             context.commit('setLoading', true);
             axios.get(`http://localhost:5000/api/administrator/category`).then(res => {
                 context.commit("setCategories", res.data);

@@ -14,6 +14,11 @@ export default new VueRouter({
       component: Category 
     },
     { 
+      path: '/categories/new',
+      name: 'NewCategoryForm',
+      component: CategoryForm
+    },
+    { 
       path: '/categories/:id',
       name: 'CategoryForm',
       component: CategoryForm,
