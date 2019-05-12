@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="row">
+        <div class="row" v-if="!loading">
             <div class="col s12">
                 <div class="page-subtitle">
                     <h4>Позиции:</h4>
@@ -37,6 +37,7 @@
                 <div v-else class="center">В категории нет позиций</div>
             </div>
         </div>
+        <Loader v-if="loading"/>
         <form @submit.prevent="onSubmit()">
             <div class="modal" ref="modal">
                 <div class="modal-content">
@@ -99,6 +100,7 @@
 import axios from 'axios'
 import { required } from 'vuelidate/lib/validators'
 import material from '../Materialize/material.js'
+import Loader from './Loader'
 
 
 export default {
@@ -113,6 +115,7 @@ export default {
             positionId: null
         }
     },
+    components: {Loader},
     mounted() {
         this.modal = this.initModal();
         this.$store.dispatch('getPositions', this.categoryId);
@@ -135,6 +138,9 @@ export default {
     computed: {
         positions() {
             return this.$store.getters.categoryPositions || [];
+        },
+        loading() {
+            return this.$store.getters.loading;
         }
     },
     methods: {

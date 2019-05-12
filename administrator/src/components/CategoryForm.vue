@@ -107,7 +107,7 @@ export default {
         if (this.$route.params.id) {
             setTimeout(() => {
                 material.updateTextFields();
-            }, 150)
+            }, 200)
             
             axios.get(`http://localhost:5000/api/administrator/category/${this.id}`)
                  .then(res => {
@@ -138,7 +138,6 @@ export default {
                 id: this.id
             }
             if (this.isNew) {
-                // console.log(category);
                 this.$store.dispatch('createCategory', category)
                            .then(() => {
                                     this.$router.push('/categories');

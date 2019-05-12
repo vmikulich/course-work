@@ -35,26 +35,23 @@ import Loader from './Loader'
 
 export default {
     name: 'Category',
-    data() {
-        return {
-            // categories: [],
-            loading: false
-        }
-    },
+    // data() {
+    //     return {
+    //         // categories: [],
+    //         // loading: false
+    //     }
+    // },
     components: {Loader},
     mounted() {
-        // this.loading = true;
-        // axios.get(`http://localhost:5000/api/administrator/category`).then(res => {
-        //     this.categories = res.data;
-        //     this.loading = false;
-        // });
-        this.$store.dispatch("getCategories", {loading: true});
-        // this.loading = false;
+        this.$store.dispatch("getCategories");
     },
     computed: {
         categories() {
             return this.$store.getters.categories || [];
         },
+        loading() {
+            return this.$store.getters.loading;
+        }
     },
 }
 </script>
