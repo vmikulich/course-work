@@ -108,7 +108,7 @@ export default {
         if (this.$route.params.id) {
             setTimeout(() => {
                 material.updateTextFields();
-            }, 200)
+            }, 150)
             
             axios.get(`http://localhost:5000/api/administrator/category/${this.id}`)
                  .then(res => {

@@ -31,7 +31,7 @@ export default new Vuex.Store({
             }
             fd.append('name', payload.name)
             axios.post(`http://localhost:5000/api/administrator/category`, fd)
-                 .then(() => context.commit("adCategory", payload))
+                 .then((res) => context.commit("adCategory", res.data))
                  
         },
         updateCategory(context, payload) {
@@ -51,7 +51,7 @@ export default new Vuex.Store({
         },
         createPosition(context, payload) {
             axios.post(`http://localhost:5000/api/administrator/position`, payload)
-                 .then(() => context.commit('addPosition', payload));
+                 .then((res) => context.commit('addPosition', res.data));
         },
         updatePosition(context, payload) {
             return axios.patch(`http://localhost:5000/api/administrator/position/${payload._id}`, payload)
