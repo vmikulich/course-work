@@ -23,7 +23,7 @@ export default {
             fd.append('company', payload.company)
             fd.append('description', payload.description)
             fd.append('link', payload.link)
-            fd.append('categoryId', payload.category)
+            fd.append('category', payload.category)
             axios.post(`http://localhost:5000/api/administrator/position`, fd)
                  .then((res) => {
                     context.commit("addPosition", res.data);
@@ -31,7 +31,16 @@ export default {
                 })
         },
         updatePosition(context, payload) {
-            return axios.patch(`http://localhost:5000/api/administrator/position/${payload._id}`, payload)
+            const fd = new FormData();
+            if (payload.imageSrc) {
+                fd.append('image', payload.imageSrc, payload.imageSrc.name)
+            }
+            fd.append('name', payload.name)
+            fd.append('company', payload.company)
+            fd.append('description', payload.description)
+            fd.append('link', payload.link)
+            fd.append('category', payload.category)
+            return axios.patch(`http://localhost:5000/api/administrator/position/${payload._id}`, fd)
                 //  .then(() => context.commit('updatePosition', payload));
         },
         deletePosition(context, payload) {

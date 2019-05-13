@@ -4,8 +4,11 @@
             <div class="col s6 m6" v-for="category in categories" :key="category.id">
                 <div class="card">
                     <router-link class="card-image" :to="{name: 'CategoryForm', params: {id: category._id}}" >
-                        <img src="../../../uploads/10052019-190325_885-basketball.jpg">
-                        <span class="card-title bold">{{category.name}}</span>
+                        <img 
+                            class="h300" 
+                            :src="'http://localhost:5000/'+category.imageSrc"     
+                        >
+                        <span class="card-title black-text">{{category.name}}</span>
                     </router-link>
                 </div>
             </div>
@@ -43,5 +46,8 @@ export default {
     .mw80 {
         margin: auto;
         max-width: 80%;
+    }
+    .h300 {
+        height: 300px;
     }
 </style>

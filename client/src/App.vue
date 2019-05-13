@@ -2,7 +2,8 @@
   <div>
     <nav>
       <div class="nav-wrapper grey darken-1">
-          <router-link to="/categories" class="brand-logo">Newborn</router-link>
+        <img class="png" src="./assets/phoenix.png" alt="">
+        <router-link to="/categories" class="brand-logo">Newborn</router-link>
       </div>
   </nav>
     <router-view/>
@@ -21,3 +22,11 @@ export default {
 
 
 </style>
+
+<style scoped>
+  .png {
+    width: 65px;
+    margin-right: 10px;
+  }
+</style>
+

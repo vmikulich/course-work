@@ -12,6 +12,7 @@
     "core-js": "^2.6.5",
     "css-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "level-filesystem": "^1.2.0",
     "materialize-css": "^1.0.0-rc.2",
     "sass-loader": "^7.1.0",
     "style-resources-loader": "^1.2.1",

@@ -40,7 +40,7 @@ export default {
                 fd.append('image', payload.imageSrc, payload.imageSrc.name)
             }
             fd.append('name', payload.name)
-            axios.patch(`http://localhost:5000/api/administrator/category/${payload.id}`, payload)
+            axios.patch(`http://localhost:5000/api/administrator/category/${payload.id}`, fd)
         },
         deleteCategory(context, payload) {
             return axios.delete(`http://localhost:5000/api/administrator/category/${payload}`)

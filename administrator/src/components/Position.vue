@@ -10,6 +10,12 @@
                     >
                         Добавить позицию
                     </button>
+                     <!-- <button 
+                        class="waves-effect waves-light btn grey darken-1 btn-small"
+                        @click="upLoadPosition()"
+                    >
+                        Загрузить позиции
+                    </button> -->
                 </div>
 
                 <div class="collection" v-if="positions.length !== 0">
@@ -132,12 +138,10 @@
 
 <script>
 import axios from 'axios'
-import osmosis from 'osmosis'
 import { required } from 'vuelidate/lib/validators'
 import material from '../Materialize/material.js'
 import Loader from './Loader'
-import firstParser from '../firstParser'
-import secondParser from '../secondParser'
+// import first from '../parsers/first.js'
 
 
 export default {
@@ -157,8 +161,8 @@ export default {
     },
     components: {Loader},
     mounted() {
-        // console.log(secondParser);
         this.modal = this.initModal();
+        // console.log(first);
         this.$store.dispatch('getPositions', this.categoryId);
     },
     beforeDestroy(){
@@ -273,6 +277,41 @@ export default {
             }
             reader.readAsDataURL(file);
         },
+        // upLoadPosition() {
+            // axios.get('http://localhost:5000/data/clothes.json')
+            //      .then(res => {
+            //          console.log(res.data);
+            //      }).catch(err => {
+            //          console.log('Error')
+            //      })
+            // let xhr = new XMLHttpRequest();
+
+
+            // const jsonUrl='http://localhost:5000/data/food.json';
+            // fetch('../../../data/food.json')
+            // .then( res => res.json() )
+            // .then( (data) => {
+            //     console.log(data)
+            // })
+            // fetch(jsonUrl,{mode:'cors'})
+            // .then(
+            //     function(response) {
+            //     if (response.status !== 200) {
+            //         console.log(response);
+            //         return;
+            //     }
+
+            //     // Examine the text in the response
+            //     response.json().then(function(data) {
+            //         console.log(response);
+            //     });
+            //     }
+            // )
+            // .catch(function(err) {
+            //     console.log('Fetch Error :-S', err);
+            // });
+
+        // }
     
     }
 }

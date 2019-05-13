@@ -8,17 +8,30 @@
                         <label for="name">Название</label>
                     </div>
                 </div>
+                <div class="col order">
+                    <div class="input-field inline order-position-input">
+                        <input type="text" id="company" v-model="company">
+                        <label for="company">Компания</label>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col s4" v-for="position in filteredPos" :key="position.id">
                 <div class="card">
                     <div class="card-image">
-                        <img src="images/sample-1.jpg">
+                        <img 
+                            class="h300" 
+                            :src="'http://localhost:5000/'+position.imageSrc"
+                        >
                     </div>
                     <div class="card-content">
                         <span class="card-title">{{position.name}}</span>
+                        <span>Компания: {{position.company}}</span>
                         <p>{{position.description}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a :href="position.link" target="_blank">This is a link</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +54,8 @@ export default {
             company: '',
             description: '',
             positionId: null,
-            name: ''
+            name: '',
+            company: ''
         }
     },
     components: {Loader},
@@ -57,7 +71,8 @@ export default {
         },
         filteredPos() {
             return this.positions.filter(item => item.name.toLowerCase().includes(this.name.trim().toLowerCase()))
-                            .slice()
+                                 .filter(item => item.company.toLowerCase().includes(this.company.trim().toLowerCase()))
+                                 .slice()
         },
         loading() {
             return this.$store.getters.loading;
@@ -70,5 +85,8 @@ export default {
 <style>
     .textarea {
         width: 500px;
+    }
+    .h300 {
+        height: 250px;
     }
 </style>

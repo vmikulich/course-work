@@ -1,0 +1,220 @@
+[
+    {
+        "name": "Бургер-сеты от 11,80 руб/до 750 г в бургерной \"B.B.J.\"",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/bbj1.jpg",
+        "place": "Бургерная \"B.B.J.\"",
+        "description": [
+            {
+                "days": "20",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Кондитерские и мучные изделия, напитки  всего от от 1,10 руб.",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/736a47ccaed6f5c5605cf250d7c1dc94_2.jpg",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "KFC -50%: 25 крыльев, 2 баскет дуэта или твистера с напитками от 8,10 руб.",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/slivki-1.jpg",
+        "description": [
+            {
+                "days": "6",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Пиццы от \"Presto Pizza\" всего от 10,31 руб/до 1042 г",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/1517495010_pizza-minsk-skidka-prestopizza-1.jpg",
+        "place": "Пиццерия \"Presto Pizza\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Закрытые пироги от \"Пироговая №1\" на Комаровке или с доставкой всего от 4,50 руб/от 600 г",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/1530186115_1-pirogi-minsk-skidka-pirogovaya1_1.jpg",
+        "place": "Пироговая №1",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Кальян (бестабачная смесь) от 13,50 руб. Мороженое, лимонад, молочные коктейли от 4,20 руб. в кальянной \"Мята на Коласа\"",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/kalyan-minsk-skidka-myatanakolasa-kar-2-kar.jpg",
+        "place": "Кальянная \"Мята на Коласа\"",
+        "description": [
+            {
+                "days": "13",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Круглосуточно 11 сетов от \"SUSHI HOUSE\" навынос + доставка со скидкой до 65%",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/ikebana-set-minsk-sushihouse-kar-1.jpg",
+        "place": "Доставка суши",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Скидка до 60% от службы доставки \"Рубай.бай\": суши, пицца, шашлык, горячие блюда, холодные закуски, салаты, супы",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/menu-minsk-skidka-plovruby-mainpic.jpg",
+        "place": "Служба доставки \"Рубай.бай\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Свежеохлажденный стейк из лосося/тунца, хвосты тигровых креветок, блюда морской кухни для двоих от 28,60 руб/до 1250 г",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/ryba-moreprodukty-minsk-chefarts-1.jpg",
+        "place": "Sushi-bar \"ChefArts\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Ужин для двоих от 17 руб. в ресторане \"Godji\"",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/panaziatskaya-kuhnya-minsk-godji-kar-222.jpg",
+        "place": "Бар \"Godji\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "19 суши-сетов всего от 16 руб/до 1250 г + подарок на выбор от мини-кафе \"Sushiland\"",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/1554369067_sushi-sety-minsk-sushiland-kar.jpg",
+        "place": "Мини-кафе \"Sushiland\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Суши-сеты от \"Море Суши\" от 15,20 руб/до 1961 г",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/sushi-minsk-moresushi-kar-2.jpg",
+        "place": "Служба доставки \"Море Суши\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Пицца сет 3, 5 или 7 пицц! Со скидкой до 60% от 1pizza.by",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/gl_33.jpg",
+        "place": "Биг Комбо 1pizza",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Шашлык-сеты от 17,50 руб/до 1500 г от кафе \"BBQ Burger\" ежедневно навынос + доставка!",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/1540979831_gl-menyu-shashlyk-kafe-minsk-skidka-bbqburger.jpg",
+        "place": "Кафе \"BBQ Burger\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Бургер-сет для двоих за 30 руб/1130 г в бургерной \"The Тёлки\"",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/telki.jpg",
+        "place": "Бургерная \"The Тёлки\"",
+        "description": [
+            {
+                "days": "13",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Суши-сеты с бесплатной доставкой от 19,90 руб/до 1700 г от Urbanfood.by!",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/Setprime.jpg",
+        "place": "Доставка пиццы и суши \"Urbanfood.by\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Суши-сеты от 12,90 руб/до 1550 г от \"The суши\"",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/sushi-sety-minsk-skidka-thesushi-1.jpg",
+        "place": "\"The суши\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Пицца в кафе \"GARAGE\" от 9,95 руб/до 850 г",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/1-pizza-minsk-garazh.jpg",
+        "place": "Кафе \"GARAGE\"",
+        "description": [
+            {
+                "days": "7",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Сеты от \"SushiChefArts\" от 15,20 руб/до 1110 г",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/1489406041_1.jpg",
+        "place": "Sushi-bar \"ChefArts\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    },
+    {
+        "name": "Закуски, бургеры, салаты для двоих от 11 руб. в баре \"Пиранья\"",
+        "img": "https://www.slivki.by/znijki-media/w522_322/default/1009921/gl-menyu-bar-minsk-skidka-piranya.jpg",
+        "place": "Бар \"Пиранья\"",
+        "description": [
+            {
+                "days": "18",
+                "hours": "5"
+            }
+        ]
+    }
+]

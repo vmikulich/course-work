@@ -20,29 +20,7 @@ const siteLinkRight='https://www.slivki.by';
         savedData.map(el => {
            el.link =  siteLinkRight + el.link;
         });
-        fs.writeFile('data.json', JSON.stringify( savedData, null, 4), function(err) {
-            if(err) console.error(err);
-            else console.log('Data Saved to data.json file');
-        })
     });
-
-
-    // setTimeout(()=>{
-    //     let newData=[];
-    //     for (let i=0;i<savedData.length;i++) {
-    //         osmosis
-    //             .get(savedData[i].link)
-    //             .set({
-    //                 //'name': '.offer-details--title',
-    //                 'img': '.carousel-inner+img@src'
-    //                 //'description':
-    //             })
-    //             .data((data) => {
-    //                 newData.push(data);
-    //                 console.log(i);
-    //             })
-    //     }
-    // },1000);
 
 let newData=[];
     setTimeout(()=>{
@@ -62,17 +40,18 @@ let newData=[];
                     newData.push(data);
                 })
         })
-    },800);
+    },3000);
 
     setTimeout(()=>{
         newData.map(el => {
             el.img = siteLinkRight + el.img;
             el.img.replace(/\s/g, '');
         });
-        console.log(savedData.length);
-        console.log(newData.length);
         var uniq = new Set(newData.map(e => JSON.stringify(e)));
         var res = Array.from(uniq).map(e => JSON.parse(e));
-        console.log(res);
-    },6500);
+        fs.writeFile('../data/food.json', JSON.stringify( res, null, 4), function(err) {
+            if(err) console.error(err);
+            else console.log('Data Saved to data.json file');
+        })
+    },10000);
 

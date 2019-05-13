@@ -58,9 +58,19 @@
             <div class="col s12 l4 center">
                 <img 
                     class="responsive-img h200" 
-                    :src="imagePreview"
-                    v-if="imagePreview"
+                    :src="'http://localhost:5000/'+imagePreview"
+                    v-if="imagePreview && id !== null"
                 >
+                <img 
+                    class="responsive-img h200" 
+                    :src="imagePreview"
+                    v-if="imagePreview && id === null"
+                >
+                <!-- <img 
+                    class="responsive-img h200" 
+                    :src="imagePreview"
+                    v-if="imagePreview && id === !null && isNew === false"
+                > -->
             </div>
         </div>
         <Position
@@ -155,7 +165,6 @@ export default {
         onFileUpload(event) {
             const file = event.target.files[0];
             this.image = file;
-            console.log(this.image);
 
             const reader = new FileReader();
             reader.onload = () => {
