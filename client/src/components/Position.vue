@@ -2,13 +2,13 @@
     <div>
         <div v-if="isFilterActive" class="page-title">
             <div class="fr">
-                <div class="col order">
+                <div class="">
                     <div class="input-field inline order-position-input">
                         <input type="text" id="name" v-model="name">
                         <label for="name">Название</label>
                     </div>
                 </div>
-                <div class="col order">
+                <div class="ml40">
                     <div class="input-field inline order-position-input">
                         <input type="text" id="company" v-model="company">
                         <label for="company">Компания</label>
@@ -88,5 +88,8 @@ export default {
     }
     .h300 {
         height: 250px;
+    }
+    .ml40 {
+        margin-left: 40px;
     }
 </style>

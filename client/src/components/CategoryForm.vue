@@ -1,7 +1,7 @@
 <template>
     <div class="mw80">
         <div class="page-title">
-            <h4>
+            <h3>
                 <router-link class="grey-text text-darken-2" to="/categories">{{currName}}</router-link>
                 <button 
                     class="btn btn-small open" 
@@ -10,7 +10,7 @@
                 >
                     <i class="material-icons">filter_list</i>
                 </button>
-            </h4>
+            </h3>
         </div>
         <Position :categoryId="id" :isFilterActive="isFilterActive"/>
     </div>
@@ -81,7 +81,7 @@ export default {
 
 
 <style>
-    h4 {
+    h3 {
         width: 100%;
         position: relative;
     }

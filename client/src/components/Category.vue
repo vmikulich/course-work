@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <h2 class="grey-text text-darken-2">Категории</h2>
         <div class="row" v-if="!loading">
             <div class="col s6 m6" v-for="category in categories" :key="category.id">
                 <div class="card">
@@ -8,7 +9,7 @@
                             class="h300" 
                             :src="'http://localhost:5000/'+category.imageSrc"     
                         >
-                        <span class="card-title black-text">{{category.name}}</span>
+                        <span class="card-title">{{category.name}}</span>
                     </router-link>
                 </div>
             </div>
@@ -43,10 +44,6 @@ export default {
 </script>
 
 <style>
-    .mw80 {
-        margin: auto;
-        max-width: 80%;
-    }
     .h300 {
         height: 300px;
     }

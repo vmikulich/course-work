@@ -47,7 +47,7 @@
         <form @submit.prevent="onSubmit()">
             <div class="modal" ref="modal">
                 <div class="modal-content">
-                    <h4 class="mb1">Добавить позицию</h4>
+                    <h4 class="mb1">{{positionId === null ? 'Добавить' : 'Редактировать'}} позицию</h4>
                     <div class="input-field">
                         <input 
                             id="pos-name" 
